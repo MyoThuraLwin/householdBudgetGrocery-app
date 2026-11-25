@@ -533,7 +533,6 @@ export function SettingsPage() {
             ["Recent expense average", `${h.averageMonths} completed months`],
             ["Maximum stores", h.maxStores],
             ["Single-store preference", h.singleStore ? "On" : "Off"],
-            ["Database", "SQL Server 2022 · Windows authentication"],
           ].map(([label, value]) => (
             <div key={label}>
               <span>{label}</span>

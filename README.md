@@ -43,6 +43,8 @@ The production build and TypeScript checks run with `npm run build`. Budget, inv
 
 Price data is fictional until you import permitted observations. Optional AI features report a configuration message until a backend model and credentials are supplied.
 
+On Products & prices, register a data source, select it and download a CSV or JSON template containing ten fictional multi-store examples. Replace the examples and enter the date each price was checked. The optional stock confirmation applies only to rows without stock details; otherwise they remain unknown. Review the import preview before committing. Category choices include standard categories and those already used by your household's inventory or imported products.
+
 ## Registration, sign-in and administration
 
 The app opens on a sign-in/create-account screen. Registration creates a private household. The development build includes prefill shortcuts for administrator, Alice and Ben demo accounts. Access JWTs are held only in memory and renewed with a backend HttpOnly cookie; no JWT is written to localStorage. Signing out revokes the server session and clears the workspace.

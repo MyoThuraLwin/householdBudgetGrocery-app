@@ -2282,7 +2282,7 @@ export interface operations {
                     funds: string;
                     reserve: string;
                     /** @default false */
-                    completed: boolean;
+                    completed?: boolean;
                 };
             };
         };
@@ -2562,7 +2562,7 @@ export interface operations {
                     /** @enum {string} */
                     category: "accommodation" | "electricity" | "internet" | "phone" | "transport" | "other";
                     /** @default  */
-                    subcategory: string;
+                    subcategory?: string;
                     description: string;
                     /** @description Legacy monthly input; use inputAmount for new clients. */
                     planned?: string;
@@ -2573,9 +2573,9 @@ export interface operations {
                      * @default monthly
                      * @enum {string}
                      */
-                    frequency: "monthly" | "weekly";
+                    frequency?: "monthly" | "weekly";
                     /** @default true */
-                    recurring: boolean;
+                    recurring?: boolean;
                     revision: number;
                 };
             };
@@ -2719,7 +2719,7 @@ export interface operations {
                     /** @enum {string} */
                     category: "accommodation" | "electricity" | "internet" | "phone" | "transport" | "other";
                     /** @default  */
-                    subcategory: string;
+                    subcategory?: string;
                     description: string;
                     /** @description Legacy monthly input; use inputAmount for new clients. */
                     planned?: string;
@@ -2730,9 +2730,9 @@ export interface operations {
                      * @default monthly
                      * @enum {string}
                      */
-                    frequency: "monthly" | "weekly";
+                    frequency?: "monthly" | "weekly";
                     /** @default true */
-                    recurring: boolean;
+                    recurring?: boolean;
                     revision: number;
                     outstanding: string;
                     /** @enum {string} */
@@ -2811,7 +2811,7 @@ export interface operations {
                     /** Format: date */
                     incurredOn: string;
                     /** @default  */
-                    note: string;
+                    note?: string;
                     outstanding: string;
                     /** @enum {string} */
                     settlement: "partial" | "settled";
@@ -2889,7 +2889,7 @@ export interface operations {
                     /** Format: date */
                     incurredOn: string;
                     /** @default  */
-                    note: string;
+                    note?: string;
                     outstanding: string;
                     /** @enum {string} */
                     settlement: "partial" | "settled";
@@ -2968,7 +2968,7 @@ export interface operations {
                     /** Format: date */
                     incurredOn: string;
                     /** @default  */
-                    note: string;
+                    note?: string;
                     outstanding: string;
                     /** @enum {string} */
                     settlement: "partial" | "settled";
@@ -3175,7 +3175,7 @@ export interface operations {
                     /** @enum {string} */
                     unit: "g" | "kg" | "ml" | "l" | "each";
                     /** @default 0 */
-                    minimum: string | "0";
+                    minimum?: string | "0";
                     productId?: string | null;
                 };
             };
@@ -3318,7 +3318,7 @@ export interface operations {
                     /** @enum {string} */
                     unit: "g" | "kg" | "ml" | "l" | "each";
                     /** @default 0 */
-                    minimum: string | "0";
+                    minimum?: string | "0";
                     productId?: string | null;
                     revision: number;
                 };
@@ -3399,7 +3399,7 @@ export interface operations {
                      * @default best-before
                      * @enum {string}
                      */
-                    dateLabel: "best-before" | "use-by" | "unknown";
+                    dateLabel?: "best-before" | "use-by" | "unknown";
                 };
             };
         };
@@ -3473,7 +3473,7 @@ export interface operations {
                     quantity: string;
                     reason: string;
                     /** @default false */
-                    expiredAcknowledged: boolean;
+                    expiredAcknowledged?: boolean;
                 };
             };
         };
@@ -3888,14 +3888,14 @@ export interface operations {
                      * @default normal
                      * @enum {string}
                      */
-                    priority: "high" | "normal" | "low";
+                    priority?: "high" | "normal" | "low";
                     inventoryItemId?: string | null;
                     productId?: string | null;
                     /**
                      * @default manual
                      * @enum {string}
                      */
-                    origin: "manual" | "generated" | "assistant";
+                    origin?: "manual" | "generated" | "assistant";
                     revision: number;
                 };
             };
@@ -4045,14 +4045,14 @@ export interface operations {
                      * @default normal
                      * @enum {string}
                      */
-                    priority: "high" | "normal" | "low";
+                    priority?: "high" | "normal" | "low";
                     inventoryItemId?: string | null;
                     productId?: string | null;
                     /**
                      * @default manual
                      * @enum {string}
                      */
-                    origin: "manual" | "generated" | "assistant";
+                    origin?: "manual" | "generated" | "assistant";
                     revision: number;
                 };
             };
@@ -4331,11 +4331,11 @@ export interface operations {
                     /** Format: date */
                     purchasedOn: string;
                     /** @default  */
-                    storeName: string;
+                    storeName?: string;
                     /** @default 0 */
-                    delivery: string;
+                    delivery?: string;
                     /** @default 0 */
-                    travel: string;
+                    travel?: string;
                     lines: {
                         name: string;
                         category: string;
@@ -4487,11 +4487,11 @@ export interface operations {
                     /** Format: date */
                     purchasedOn: string;
                     /** @default  */
-                    storeName: string;
+                    storeName?: string;
                     /** @default 0 */
-                    delivery: string;
+                    delivery?: string;
                     /** @default 0 */
-                    travel: string;
+                    travel?: string;
                     lines: {
                         name: string;
                         category: string;
@@ -4653,7 +4653,7 @@ export interface operations {
                     reason: string;
                     amount: string;
                     /** @default [] */
-                    movements: {
+                    movements?: {
                         batchId: string;
                         revision: number;
                         quantity: string;
@@ -4793,7 +4793,7 @@ export interface operations {
                     name: string;
                     retailer: string;
                     /** @default  */
-                    location: string;
+                    location?: string;
                 };
             };
         };
@@ -5063,7 +5063,7 @@ export interface operations {
                     type: "fixture" | "user" | "licensed" | "official" | "authorised-api";
                     permission: string;
                     /** @default 7 */
-                    freshnessDays: number;
+                    freshnessDays?: number;
                 };
             };
         };
@@ -5199,6 +5199,11 @@ export interface operations {
                     /** @enum {string} */
                     format: "csv" | "json";
                     content: string;
+                    /**
+                     * @default unknown
+                     * @enum {string}
+                     */
+                    defaultAvailability?: "available" | "unknown";
                 };
             };
         };
@@ -5547,9 +5552,9 @@ export interface operations {
                 "application/json": {
                     listId: string;
                     /** @default false */
-                    allowStale: boolean;
+                    allowStale?: boolean;
                     /** @default false */
-                    allowUnknown: boolean;
+                    allowUnknown?: boolean;
                 };
             };
         };
@@ -5906,9 +5911,9 @@ export interface operations {
                     mode: "pickup" | "delivery";
                     maxStores: number;
                     /** @default false */
-                    allowStale: boolean;
+                    allowStale?: boolean;
                     /** @default false */
-                    allowUnknown: boolean;
+                    allowUnknown?: boolean;
                 };
             };
         };
@@ -6247,7 +6252,7 @@ export interface operations {
                 "application/json": {
                     revision: number;
                     /** @default false */
-                    acknowledgeWarnings: boolean;
+                    acknowledgeWarnings?: boolean;
                 };
             };
         };

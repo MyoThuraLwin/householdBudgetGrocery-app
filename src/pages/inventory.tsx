@@ -10,6 +10,7 @@ import { api, money, localDate, quantity } from "@/lib/api"
 import { Button } from "@/components/ui/button"
 import { InventoryStockInputs } from "@/components/inventory-stock-inputs"
 import { StockQuantityInput } from "@/components/stock-quantity-input"
+import { productCategories } from "@/lib/product-categories"
 import {
   FormDialog,
   DataTable,
@@ -21,16 +22,15 @@ import {
 } from "@/components/workspace"
 
 const units = options(["kg", "g", "l", "ml", "each"])
-const categories = options([
-  "Dairy",
-  "Meat",
-  "Vegetable",
-  "Egg",
-  "Pantry",
-  "Fruit",
-])
 export function InventoryPage() {
   const w = useWorkspace()
+  const categories = options([
+    ...new Set([
+      ...productCategories,
+      ...w.inventory.map((item) => item.category),
+      ...w.products.map((listing) => listing.product.category),
+    ]),
+  ])
   const [filter, setFilter] = useState("all")
   const fields = (i?: InventoryItem): Field[] => [
     { name: "name", label: "Item name", value: i?.name },

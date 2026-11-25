@@ -68,6 +68,7 @@ export interface ImportPreview {
   count: number
   errors: { row: number; message: string }[]
   committed: boolean
+  unknownStockCount?: number
   result?: { imported: number; duplicates: number }
 }
 export interface Candidate {

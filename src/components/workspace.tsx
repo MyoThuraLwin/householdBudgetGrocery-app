@@ -44,6 +44,7 @@ export function FormDialog({
   children,
   label = "Save changes",
   disabled = false,
+  triggerVariant = "outline",
 }: {
   title: string
   description?: string
@@ -52,6 +53,7 @@ export function FormDialog({
   children?: ReactNode
   label?: string
   disabled?: boolean
+  triggerVariant?: "default" | "outline"
 }) {
   const [open, setOpen] = useState(false)
   const [busy, setBusy] = useState(false)
@@ -59,7 +61,7 @@ export function FormDialog({
   return (
     <>
       <Button
-        variant="outline"
+        variant={triggerVariant}
         size="sm"
         disabled={disabled}
         onClick={() => setOpen(true)}
